@@ -29,7 +29,7 @@ var controllers = {
             });
     },
     convertHtmlPdfPost: function(req,res){
-        const nomeArquivo = 'pdf/convert.pdf';
+        const nomeArquivo = req.body.nome_arquivo ? req.body.nome_arquivo : 'pdf/convert.pdf';
         let options = { format: 'A4', path: nomeArquivo, displayHeaderFooter: true, headerTemplate: 'teste - cabecalho', footerTemplate: 'teste - rodape' };
         let file = { content: req.body.conteudo };
         html_to_pdf.generatePdf(file, options)
