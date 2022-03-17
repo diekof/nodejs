@@ -34,7 +34,7 @@ var controllers = {
         let file = { content: req.body.conteudo };
         html_to_pdf.generatePdf(file, options)
             .then((re) => {
-                res.download(nomeArquivo)
+                res.status(200).download(nomeArquivo)
                 // res.status(200).send({
                 //     isSuccess: true,
                 // })
