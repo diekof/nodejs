@@ -1,7 +1,7 @@
 'use strict';
 
 const html_to_pdf = require('html-pdf-node');
-const options = { format: 'A4', path: './pdf/convert.pdf' };
+
 
 var properties = require('../package.json')
 
@@ -29,6 +29,7 @@ var controllers = {
             });
     },
     convertHtmlPdfPost: function(req,res){
+        let options = { format: 'A4', path: './pdf/convert.pdf', displayHeaderFooter: true, headerTemplate: 'teste - cabecalho', footerTemplate: 'teste - rodape' };
         let file = { content: req.body.conteudo };
         html_to_pdf.generatePdf(file, options)
             .then((re) => {
