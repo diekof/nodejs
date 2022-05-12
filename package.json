@@ -9,9 +9,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "FileReader": "^0.10.2",
     "cors": "^2.8.5",
     "express": "^4.17.3",
     "express-html-to-pdf": "^1.3.0",
+    "fs": "0.0.1-security",
     "html-pdf-node": "^1.0.8",
     "request": "^2.88.2"
   }
